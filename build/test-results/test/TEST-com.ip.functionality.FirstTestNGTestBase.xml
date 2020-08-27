@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ip.functionality.FirstTestNGTestBase" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-08-27T15:26:39" hostname="DESKTOP-QA2NH3N" time="0.017">
+  <properties/>
+  <testcase name="getExistingUserReturnsExistingSavedUser" classname="com.ip.functionality.FirstTestNGTestBase" time="0.004"/>
+  <testcase name="getNonExistingUserReturnsNull" classname="com.ip.functionality.FirstTestNGTestBase" time="0.0"/>
+  <testcase name="successfulAddUserReturnsTrue" classname="com.ip.functionality.FirstTestNGTestBase" time="0.0"/>
+  <system-out><![CDATA[This is global beforeMethod
+Starting test: getExistingUserReturnsExistingSavedUser with description: Verify that getUser method retrieves the correct existing user
+This is global beforeMethod
+Starting test: getNonExistingUserReturnsNull with description: Verify that getUser method returns null if the user does not exist
+This is global beforeMethod
+Starting test: successfulAddUserReturnsTrue with description: Verify that addUser method returns true when successful
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,54 @@
+plugins {
+    id 'java'
+    id 'pmd'
+    id 'checkstyle'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    checkstyleVersion = '6.16.1'
+    pmdVersion = '6.7.0'
+}
+
+pmd {
+    toolVersion = pmdVersion
+    ignoreFailures = true
+    ruleSetFiles = files("config/pmd/ruleset.xml")
+    //ruleSets = []
+    rulePriority = 3
+}
+
+checkstyle {
+    toolVersion = checkstyleVersion
+    config = rootProject.resources.text.fromFile('config/checkstyle/checkstyle.xml')
+    ignoreFailures = true
+}
+
+tasks.withType(Pmd) {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}
+
+tasks.withType(Checkstyle) {
+    reports {
+        xml.enabled false
+        html.enabled true
+    }
+}
+
+dependencies {
+    testImplementation group: 'org.testng', name: 'testng', version: '6.14.3'
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.2'
+}
+
+test {
+    useTestNG()
+}
